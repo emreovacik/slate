@@ -7,7 +7,6 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
 
 toc_footers:
   - <a href='https://www.sendrater.com/register'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -272,7 +271,7 @@ f | true | 3 letter ISO - FROM country code
 t | true | 3 letter ISO - TO country code
 a | false | Amount to send (100 if none specified) 
 
-## Use Cases
+# Use Cases
 
 Use the Sendrater API to leverage near real-time data on international money transfer rates and fees to drive business growth and improve strategic decision-making. Here are five ways you can use the Sendrater API:
 
