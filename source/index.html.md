@@ -1,7 +1,7 @@
 ---
 title: Sendrater API Reference
 
-language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
+language_tabs: 
   - shell
   - go
 
@@ -31,26 +31,25 @@ To access the API endpoints, [sign up for an account](https://www.sendrater.com/
 > To authorize your requests, specify your access token in the header of your request:
 
 ```shell
-# With shell, pass the correct header with each request
 curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
 ```
 
 > Replace `API_TOKEN` with your API token from the Sendrater dashboard.
 
-> Include your API token in all API requests to the server in a header formatted as:
-
-`Authorization: API_TOKEN`
+> Include your API token in all API requests to the server in a header formatted as: `Authorization: API_TOKEN`
 
 # Endpoints
 
 ## Get Origin Country List
 
-> Retrieve the list of available origin countries for initiating money transfers.
+Retrieve the list of available origin countries for initiating money transfers.
+
+> Example request:
 
 ```shell
 curl --location 'https://api.sendrater.com/country/from' \
---header 'Authorization: ••••••'
+--header 'Authorization: API_TOKEN'
 ```
 
 ```go
@@ -82,7 +81,7 @@ func main() {
 }
 ```
 
-> This command returns a JSON structured like this:
+> The above command returns a JSON structured like this:
 
 ```json
 [
@@ -113,6 +112,8 @@ You can get the available origin country list from the endpoint:
 ## Get Destination Country List
 
 Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
+
+> Example request:
 
 ```shell
 curl --location 'https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>' \
@@ -148,7 +149,7 @@ func main() {
 }
 ```
 
-> The above command returns destination country list JSON structured like this:
+> The above command returns a destination country list JSON structured like this:
 
 ```json
 [
@@ -178,16 +179,17 @@ You can get the available destination country list from this endpoint.
 
 Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
 
-
 ### URL Parameters
 
-Parameter | Description
-------------------- | -----------
-ORIGIN_COUNTRY_CODE | 3 letter ISO country code
+| Parameter             | Description                        |
+|-----------------------|-------------------------------------|
+| ORIGIN_COUNTRY_CODE   | 3-letter ISO country code           |
 
 ## Get Corridor Rates
 
 Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day to keep it as close to real-time as possible.
+
+> Example request:
 
 ```shell
 curl --location 'https://api.sendrater.com/rates' \
@@ -200,13 +202,11 @@ curl --location 'https://api.sendrater.com/rates' \
 
 ```go
 func main() {
-
   url := "https://api.sendrater.com/rates"
 
   payload := strings.NewReader("f=GBR&t=IND&a=100")
 
-  client := &http.Client {
-  }
+  client := &http.Client{}
   req, err := http.NewRequest("POST", url, payload)
 
   if err != nil {
@@ -257,7 +257,7 @@ func main() {
 ]
 ```
 
-This endpoint lists the providers with their current rates, fees and a receive value for the specified amount. If no amount specified, 100 is used.
+This endpoint lists the providers with their current rates, fees, and a receive value for the specified amount. If no amount is specified, 100 is used.
 
 ### HTTP Request
 
@@ -265,11 +265,11 @@ This endpoint lists the providers with their current rates, fees and a receive v
 
 ### URL Parameters
 
-Parameter | Mandatory | Description
---------- | ----------- | ------------
-f | true | 3 letter ISO - FROM country code
-t | true | 3 letter ISO - TO country code
-a | false | Amount to send (100 if none specified) 
+| Parameter | Mandatory | Description                          |
+|-----------|-----------|--------------------------------------|
+| f         | true      | 3-letter ISO - FROM country code     |
+| t         | true      | 3-letter ISO - TO country code       |
+| a         | false     | Amount to send (100 if none specified)|
 
 # Use Cases
 
