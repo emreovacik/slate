@@ -28,12 +28,12 @@ To access the API endpoints, [sign up for an account](https://www.sendrater.com/
 
 # Authentication
 
-To authorize your requests, specify your access token in the header of your request.
-
 ```shell
 curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
 ```
+
+To authorize your requests, specify your access token in the header of your request.
 
 Replace `API_TOKEN` with your API token from the Sendrater dashboard.
 
@@ -42,8 +42,6 @@ Include your API token in all API requests to the server in a header formatted a
 # Endpoints
 
 ## Get Origin Country List
-
-Retrieve the list of available origin countries for initiating money transfers.
 
 > Example request:
 
@@ -102,16 +100,15 @@ func main() {
     }
 ]
 ```
-
 You can get the available origin country list from the endpoint.
+
+Retrieve the list of available origin countries for initiating money transfers.
 
 ### HTTP Request
 
 `GET https://api.sendrater.com/country/from`
 
 ## Get Destination Country List
-
-Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
 
 > Example request:
 
@@ -173,6 +170,9 @@ func main() {
 
 You can get the available destination country list from this endpoint.
 
+Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
+
+
 ### HTTP Request
 
 `GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
@@ -186,8 +186,6 @@ Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
 | ORIGIN_COUNTRY_CODE   | 3-letter ISO country code           |
 
 ## Get Corridor Rates
-
-Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day to keep it as close to real-time as possible.
 
 > Example request:
 
@@ -256,8 +254,9 @@ func main() {
   }
 ]
 ```
-
 This endpoint lists the providers with their current rates, fees, and a receive value for the specified amount. If no amount is specified, 100 is used.
+
+Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day to keep it as close to real-time as possible.
 
 ### HTTP Request
 
