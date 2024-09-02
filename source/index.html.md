@@ -37,7 +37,8 @@ To authorize your requests, specify your access token in the header of your requ
 
 Replace `API_TOKEN` with your API token from the Sendrater dashboard.
 
-Include your API token in all API requests to the server in a header formatted as: `Authorization: API_TOKEN`
+Include your API token in all API requests to the server in a header formatted as: 
+`Authorization: API_TOKEN`
 
 # Endpoints
 
