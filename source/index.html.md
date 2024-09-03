@@ -6,7 +6,7 @@ language_tabs:
   - go
 
 toc_footers:
-  - <a href='https://www.sendrater.com/register'>Sign Up for a Developer Key</a>
+  - <a href='https://www.sendrater.com/register'>Sign Up for an API TOKEN</a>
 
 includes:
   - errors
@@ -275,8 +275,6 @@ Retrieve the current money transfer rates, fees, and expected receive amounts fo
 ### HTTP Request
 
 `POST https://api.sendrater.com/rates`
-
-
 
 ### URL Parameters
 
