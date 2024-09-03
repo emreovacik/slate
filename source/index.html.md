@@ -43,7 +43,6 @@ Use the Sendrater API to leverage near real-time data on international money tra
 **And Many More!** The flexibility of the Sendrater API allows you to apply it in various ways to suit your unique business needs and goals.
 
 # Authentication
-
 ```shell
 curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
@@ -118,22 +117,18 @@ func main() {
 
 Retrieve the list of available origin countries for initiating money transfers.
 
-
-
-You can get the available origin country list from the endpoint below.
-
 ### HTTP Request
 
+You can get the available origin country list from the endpoint below.
 `GET https://api.sendrater.com/country/from`
 
 ## Get Destination Country List
 
 Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
 
-Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
-
 ### HTTP Request
 
+Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
 `GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
 
 > Example request:
@@ -193,7 +188,6 @@ func main() {
     }
 ]
 ```
-
 ### URL Parameters
 
 | Parameter             | Description                        |
