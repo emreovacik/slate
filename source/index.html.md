@@ -16,7 +16,7 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: description
+  - name: Sendrater API
     content: Sendrater API Documentation
 ---
 
@@ -44,22 +44,19 @@ Use the Sendrater API to leverage near real-time data on international money tra
 
 # Authentication
 
-To authorize your requests, specify your access token in the header of your request.
-
-Replace `API_TOKEN` with your API token from the Sendrater dashboard.
-
-Include your API token in all API requests to the server in a header formatted as: `Authorization: API_TOKEN`
-
 ```shell
 curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
 ```
+> Replace `API_TOKEN` with your API token from the Sendrater dashboard.
+
+To authorize your requests, specify your access token in the header of your request.
+
+Include your API token in all API requests to the server in a header formatted as: `Authorization: API_TOKEN`
 
 # Endpoints
 
 ## Get Origin Country List
-
-Retrieve the list of available origin countries for initiating money transfers.
 
 > Example request:
 
@@ -118,6 +115,10 @@ func main() {
     }
 ]
 ```
+
+Retrieve the list of available origin countries for initiating money transfers.
+
+
 
 You can get the available origin country list from the endpoint below.
 
