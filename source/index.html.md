@@ -42,8 +42,7 @@ Use the Sendrater API to leverage near real-time data on international money tra
 
 **And Many More!** The flexibility of the Sendrater API allows you to apply it in various ways to suit your unique business needs and goals.
 
-# Set-up
-## Authentication
+# Authentication
 
 To authorize your requests, specify your access token in the header of your request.
 
@@ -56,17 +55,11 @@ curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
 ```
 
-## Endpoints
+# Endpoints
 
-### Get Origin Country List
+## Get Origin Country List
 
 Retrieve the list of available origin countries for initiating money transfers.
-
-You can get the available origin country list from the endpoint below.
-
-#### HTTP Request
-
-`GET https://api.sendrater.com/country/from`
 
 > Example request:
 
@@ -126,13 +119,19 @@ func main() {
 ]
 ```
 
-### Get Destination Country List
+You can get the available origin country list from the endpoint below.
+
+### HTTP Request
+
+`GET https://api.sendrater.com/country/from`
+
+## Get Destination Country List
 
 Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
 
 Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
 
@@ -194,13 +193,13 @@ func main() {
 ]
 ```
 
-#### URL Parameters
+### URL Parameters
 
 | Parameter             | Description                        |
 |-----------------------|-------------------------------------|
 | ORIGIN_COUNTRY_CODE   | 3-letter ISO country code           |
 
-### Get Corridor Rates
+## Get Corridor Rates
 
 Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day (SLA) keep it as close to real-time as possible. 
 
@@ -276,7 +275,7 @@ func main() {
 ]
 ```
 
-#### URL Parameters
+### URL Parameters
 
 | Parameter | Mandatory | Description                          |
 |-----------|-----------|--------------------------------------|
