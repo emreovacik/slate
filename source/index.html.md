@@ -128,14 +128,6 @@ You can get the available origin country list from the endpoint below.
 
 ## Get Destination Country List
 
-Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
-
-### HTTP Request
-
-Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code below.
-
-`GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
-
 > Example request:
 
 ```shell
@@ -193,6 +185,15 @@ func main() {
     }
 ]
 ```
+
+Retrieve the list of available destination countries for sending money transfers based on the selected origin country.
+
+### HTTP Request
+
+Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code below.
+
+`GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
+
 ### URL Parameters
 
 | Parameter             | Description                        |
@@ -200,12 +201,6 @@ func main() {
 | ORIGIN_COUNTRY_CODE   | 3-letter ISO country code           |
 
 ## Get Corridor Rates
-
-Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day (based on an SLA) keep it as close to real-time as possible. 
-
-### HTTP Request
-
-`POST https://api.sendrater.com/rates`
 
 > Example request:
 
@@ -274,6 +269,14 @@ func main() {
   }
 ]
 ```
+
+Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day (based on an SLA) keep it as close to real-time as possible. 
+
+### HTTP Request
+
+`POST https://api.sendrater.com/rates`
+
+
 
 ### URL Parameters
 
