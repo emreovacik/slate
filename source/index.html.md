@@ -43,6 +43,8 @@ Include your API token in all API requests to the server in a header formatted a
 
 # Endpoints
 
+## Get Origin Country List
+
 > Example request:
 
 ```shell
@@ -100,8 +102,6 @@ func main() {
     }
 ]
 ```
-
-## Get Origin Country List
 
 You can get the available origin country list from the endpoint.
 
