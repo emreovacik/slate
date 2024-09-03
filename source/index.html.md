@@ -43,15 +43,17 @@ Use the Sendrater API to leverage near real-time data on international money tra
 **And Many More!** The flexibility of the Sendrater API allows you to apply it in various ways to suit your unique business needs and goals.
 
 # Authentication
+
+> Replace `API_TOKEN` with your API token from the Sendrater dashboard.
+
 ```shell
 curl "api_endpoint_here" \
   -H "Authorization: API_TOKEN"
 ```
-> Replace `API_TOKEN` with your API token from the Sendrater dashboard.
-
 To authorize your requests, specify your access token in the header of your request.
 
-Include your API token in all API requests to the server in a header formatted as: `Authorization: API_TOKEN`
+Include your API token in all API requests to the server in a header formatted as: 
+`Authorization: API_TOKEN`
 
 # Endpoints
 
@@ -92,7 +94,6 @@ func main() {
   fmt.Println(string(body))
 }
 ```
-
 > The above command returns a JSON structured like this:
 
 ```json
@@ -120,6 +121,7 @@ Retrieve the list of available origin countries for initiating money transfers.
 ### HTTP Request
 
 You can get the available origin country list from the endpoint below.
+
 `GET https://api.sendrater.com/country/from`
 
 ## Get Destination Country List
@@ -128,7 +130,8 @@ Retrieve the list of available destination countries for sending money transfers
 
 ### HTTP Request
 
-Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code.
+Replace `<ORIGIN_COUNTRY_CODE>` with a 3-letter ISO country code below.
+
 `GET https://api.sendrater.com/country/to/<ORIGIN_COUNTRY_CODE>`
 
 > Example request:
@@ -196,7 +199,7 @@ func main() {
 
 ## Get Corridor Rates
 
-Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day (SLA) keep it as close to real-time as possible. 
+Retrieve the current money transfer rates, fees, and expected receive amounts for different providers for a specific origin and destination country pair (corridor). The system updates the data several times a day (based on an SLA) keep it as close to real-time as possible. 
 
 ### HTTP Request
 
