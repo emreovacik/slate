@@ -53,6 +53,7 @@ curl "api_endpoint_here" \
 To authorize your requests, specify your access token in the header of your request.
 
 Include your API token in all API requests to the server in a header formatted as: 
+
 `Authorization: API_TOKEN`
 
 # Endpoints
