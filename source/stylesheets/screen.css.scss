@@ -75,7 +75,8 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
-    margin-bottom: $logo-margin;
+    margin: 0 auto;  // Centers the logo horizontally
+    padding: 10px;   // Adds some padding around the logo
   }
 
   &>.search {
