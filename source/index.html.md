@@ -57,6 +57,8 @@ Include your API token in all API requests to the server in a header formatted a
 
 # Endpoints
 
+The Sendrater API provides several endpoints that allow you to retrieve information related to international money transfer rates, fees, and country lists. Below is a description of the available endpoints and how they can be used:
+
 ## Get Origin Country List
 
 > Example request:
